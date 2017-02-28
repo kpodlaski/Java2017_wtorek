@@ -12,6 +12,16 @@ public class Rectangle implements MovableFigure {
     }
 
     @Override
+    public double area() {
+        return width*height;
+    }
+
+    @Override
+    public double perimeter() {
+        return 2*(width+height);
+    }
+
+    @Override
     public void move(double x, double y) {
         this.x+=x;
         this.y+=y;

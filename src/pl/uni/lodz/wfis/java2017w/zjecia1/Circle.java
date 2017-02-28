@@ -12,6 +12,16 @@ public class Circle implements  MovableFigure {
     }
 
     @Override
+    public double area() {
+        return Math.PI*radius*radius;
+    }
+
+    @Override
+    public double perimeter() {
+        return 2*Math.PI*radius;
+    }
+
+    @Override
     public void move(double x, double y){
         this.x+=x;
         this.y+=y;

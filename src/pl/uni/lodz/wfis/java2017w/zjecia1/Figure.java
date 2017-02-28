@@ -6,4 +6,5 @@ package pl.uni.lodz.wfis.java2017w.zjecia1;
 public interface Figure {
     public void paint();
     public double area();
+    public double perimeter();
 }
