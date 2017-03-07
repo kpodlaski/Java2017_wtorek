@@ -1,10 +1,19 @@
 package pl.uni.lodz.wfis.java2017w.zjecia1;
 
+import java.util.Random;
+
 /**
  * Created by Krzysztof Podlaski on 21.02.2017.
  */
 public class Triangle implements MovableFigure{
-    private double x1,y1,x2,y2,x3,y3;
+    private static Random rand = new Random();
+    private double
+            x1 = rand.nextDouble()*10,
+            y1 = rand.nextDouble()*10,
+            x2 = rand.nextDouble()*10,
+            y2 = rand.nextDouble()*10,
+            x3 = rand.nextDouble()*10,
+            y3 = rand.nextDouble()*10;
 
     @Override
     public void paint() {
@@ -32,5 +41,28 @@ public class Triangle implements MovableFigure{
         y1+=y;
         y2+=y;
         y3+=y;
+    }
+
+    @Override
+    public String toString() {
+        return "triangle"+perimeter()+";"+area();
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (o instanceof  MovableFigure){
+            MovableFigure mf = (MovableFigure) o;
+            return (int) (10000*(this.perimeter() - mf.perimeter()));
+        }
+        return -1;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if (o instanceof  MovableFigure){
+            MovableFigure mf = (MovableFigure) o;
+            return ((int) (this.perimeter() - mf.perimeter()))==0;
+        }
+        return false;
     }
 }
