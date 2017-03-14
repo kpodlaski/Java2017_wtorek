@@ -38,5 +38,8 @@ public class AppMain {
         for (int i=0; i<furnitures.size();i++){
             System.out.println(i + "=>" + furnitures.get(i));
         }
+        Wardrobe w = new Wardrobe(190,80,
+                "beech","beech");
+        System.out.println(furnitures.contains(w));
     }
 }

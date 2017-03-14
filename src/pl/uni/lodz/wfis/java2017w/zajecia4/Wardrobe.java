@@ -12,4 +12,21 @@ public class Wardrobe extends Furniture{
         this.material = material;
         this.id = "W"+this.id;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Wardrobe wardrobe = (Wardrobe) o;
+        if (wardrobe.heigh!= this.heigh) return false;
+        if (wardrobe.width!= this.width) return false;
+        if (!color.equalsIgnoreCase(wardrobe.color)) return false;
+        return material.equalsIgnoreCase(wardrobe.material);
+    }
+
+    @Override
+    public int hashCode() {
+        return material.hashCode();
+    }
 }
