@@ -1,5 +1,7 @@
 package pl.uni.lodz.wfis.java2017w.zajecia4;
 
+import java.util.Random;
+
 /**
  * Created by Krzysztof Podlaski on 14.03.2017.
  */
@@ -27,11 +29,12 @@ public class Wardrobe extends Furniture{
 
     @Override
     public int hashCode() {
-        int hash = 17;
+        int hash = 17 ;
         hash = hash*31 + heigh;
         hash = hash*31 + width;
         hash = hash*31 + color.hashCode();
         hash = hash*31 + material.hashCode();
+
         return hash;
     }
 }
