@@ -1,8 +1,6 @@
 package pl.uni.lodz.wfis.java2017w.zajecia4;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Krzysztof Podlaski on 14.03.2017.
@@ -41,5 +39,8 @@ public class AppMain {
         Wardrobe w = new Wardrobe(190,80,
                 "beech","beech");
         System.out.println(furnitures.contains(w));
+        System.out.println("========SETS============");
+        Set<Furniture> set = new HashSet<>();
+
     }
 }

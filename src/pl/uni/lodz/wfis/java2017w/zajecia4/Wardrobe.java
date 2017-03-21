@@ -27,6 +27,11 @@ public class Wardrobe extends Furniture{
 
     @Override
     public int hashCode() {
-        return material.hashCode();
+        int hash = 17;
+        hash = hash*31 + heigh;
+        hash = hash*31 + width;
+        hash = hash*31 + color.hashCode();
+        hash = hash*31 + material.hashCode();
+        return hash;
     }
 }

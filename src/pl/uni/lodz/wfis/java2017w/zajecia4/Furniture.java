@@ -21,4 +21,25 @@ public class Furniture {
     public String toString() {
         return id;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Furniture wardrobe = (Furniture) o;
+        if (wardrobe.heigh!= this.heigh) return false;
+        if (wardrobe.width!= this.width) return false;
+        if (!color.equalsIgnoreCase(wardrobe.color)) return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 17;
+        hash = hash*31 + heigh;
+        hash = hash*31 + width;
+        hash = hash*31 + color.hashCode();
+        return hash;
+    }
 }
