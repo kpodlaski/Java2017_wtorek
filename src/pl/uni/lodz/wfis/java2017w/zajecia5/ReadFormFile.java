@@ -1,9 +1,7 @@
 package pl.uni.lodz.wfis.java2017w.zajecia5;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.Reader;
+import java.io.*;
+import java.net.URL;
 
 /**
  * Created by Krzysztof Podlaski on 21.03.2017.
@@ -13,6 +11,13 @@ public class ReadFormFile {
         //Odczyt textowy
         BufferedReader breader =
                 new BufferedReader(new FileReader("text.txt"));
+        breader.close();
+        breader = new BufferedReader(
+                new InputStreamReader(
+                        new URL("http://www.onet.pl").openStream()
+                )
+        );
+
         String line;
         while ((line = breader.readLine())!=null ) {
             System.out.println(line);
