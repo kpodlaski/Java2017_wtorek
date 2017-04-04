@@ -26,7 +26,9 @@ public class WriteToFile {
             writer.write(line);
             writer.newLine();
             //Zapis - każde słowo nowa linia
-            for( String s : line.split(" ")){
+            //http://www.regular-expressions.info
+            //https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html
+            for( String s : line.split("\\W+")){
                 //Integer.parseInt(s);
                 writer.write(s);
                 writer.newLine();
